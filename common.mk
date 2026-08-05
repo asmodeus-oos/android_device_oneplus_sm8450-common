@@ -239,6 +239,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+# Use the Oplus power extension for device-specific touch modes.  Without this
+# the QTI HAL only writes the legacy global node and never updates the Oplus
+# independent gesture bitmask, so double-tap-to-wake is ignored on ferrari.
+$(call soong_config_set,qtipower,mode_ext_lib,power-ext-oplus)
 $(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/double_tap_enable)
 
 # QTI fwk-detect
