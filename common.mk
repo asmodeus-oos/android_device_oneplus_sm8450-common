@@ -1,3 +1,4 @@
+# Signed-off-by: Bubun Das <bubundas17@gmail.com>
 #
 # Copyright (C) 2021-2025 The LineageOS Project
 #
@@ -32,7 +33,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio-impl-qti \
     android.hardware.soundtrigger@2.3-impl \
     audioadsprpcd \
     audio.bluetooth.default \
@@ -107,6 +108,19 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
+# A2DP hardware offload (QTI). The BT stack (isA2DPOffloadEnabled in
+# packages/modules/Bluetooth/system/btif/src/bluetooth.cc) requires BOTH
+# ro.bluetooth.a2dp_offload.supported=true and persist.bluetooth.a2dp_offload.disabled=false
+# to start the A2DP_HARDWARE_OFFLOAD_DATAPATH session; without it the QTI
+# btaudio_offload_if.so keeps reporting "bluetooth provider session is not avail"
+# and no audio reaches the headphones. Matches the QTI reference taro.mk config.
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-lhdc-lhdcv5 \
+    ro.bluetooth.a2dp_offload.supported=true \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-lhdc-lhdcv5 \
+    vendor.audio.feature.a2dp_offload.enable=true
 
 # Display
 PRODUCT_PACKAGES += \
