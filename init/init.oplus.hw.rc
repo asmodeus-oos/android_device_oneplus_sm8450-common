@@ -1,0 +1,54 @@
+#
+# Copyright (C) 2022-2023 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# lemonade/p
+on property:ro.boot.rf_version=11
+    setprop ro.boot.hardware.revision "CN"
+
+on property:ro.boot.rf_version=12
+    setprop ro.boot.hardware.revision "TMO"
+
+on property:ro.boot.rf_version=13
+    setprop ro.boot.hardware.revision "IN"
+
+on property:ro.boot.rf_version=21
+    setprop ro.boot.hardware.revision "EU"
+
+on property:ro.boot.rf_version=22
+    setprop ro.boot.hardware.revision "NA"
+
+# lunaa
+on property:ro.boot.prjname=21603
+    setprop ro.boot.hardware.revision "CN"
+
+on property:ro.boot.prjname=21675
+    setprop ro.boot.hardware.revision "IN"
+
+on property:ro.boot.prjname=21676
+    setprop ro.boot.hardware.revision "EU"
+
+# martini
+on property:ro.boot.prjname=20820
+    setprop ro.boot.hardware.revision "CN"
+
+on property:ro.boot.prjname=20821
+    setprop ro.boot.hardware.revision "IN"
+
+# wly
+on property:ro.boot.prjname=20846
+    setprop ro.boot.hardware.revision "CN"
+
+on property:ro.boot.prjname=20847
+    setprop ro.boot.hardware.revision "EU"
+
+on property:ro.boot.prjname=20848
+    setprop ro.boot.hardware.revision "IN"
+
+on property:ro.boot.prjname=20849
+    setprop ro.boot.hardware.revision "US"
+
+on property:ro.boot.prjname=2084A
+    setprop ro.boot.hardware.revision "TMO"

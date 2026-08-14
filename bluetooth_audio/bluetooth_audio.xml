@@ -1,0 +1,12 @@
+<!--
+    Signed-off-by: Bubun Das <bubundas17@gmail.com>
+    Copyright (C) 2025 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<manifest version="9.0" type="device">
+    <hal format="aidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <version>6</version>
+        <fqname>IBluetoothAudioProviderFactory/default</fqname>
+    </hal>
+</manifest>

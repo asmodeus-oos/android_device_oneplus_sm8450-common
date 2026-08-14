@@ -1,0 +1,63 @@
+// Signed-off-by: Bubun Das <bubundas17@gmail.com>
+//
+// Copyright (C) 2025 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+// QTI A2DP offload bridge for android.hardware.bluetooth.audio.
+// Built as a drop-in replacement for the AOSP android.hardware.bluetooth.audio-impl
+// (same output filename via stem) so the audioserver loads this implementation
+// and forwards A2DP hardware offload sessions to the
+// vendor.qti.hardware.bluetooth_audio@2.1 HIDL service.
+//
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_library_shared {
+    name: "android.hardware.bluetooth.audio-impl-qti",
+    stem: "android.hardware.bluetooth.audio-impl",
+    vendor: true,
+    vintf_fragments: ["bluetooth_audio.xml"],
+    defaults: [
+        "aconfig_lib_cc_static_link.defaults",
+        "latest_android_hardware_bluetooth_audio_ndk_shared",
+    ],
+    srcs: [
+        "QtiBluetoothAudioProviderFactory.cpp",
+        "QtiA2dpOffloadProvider.cpp",
+        "service.cpp",
+        // AOSP default providers (vendored into this tree)
+        "A2dpOffloadAudioProvider.cpp",
+        "BluetoothAudioProvider.cpp",
+        "A2dpSoftwareAudioProvider.cpp",
+        "HearingAidAudioProvider.cpp",
+        "HfpOffloadAudioProvider.cpp",
+        "HfpSoftwareAudioProvider.cpp",
+        "LeAudioOffloadAudioProvider.cpp",
+        "LeAudioSoftwareAudioProvider.cpp",
+    ],
+    include_dirs: [
+        "hardware/interfaces/bluetooth/audio/aidl/default",
+        "hardware/interfaces/bluetooth/audio/utils/aidl_session",
+    ],
+    export_include_dirs: ["."],
+    header_libs: ["libhardware_headers"],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "libcutils",
+        "libfmq",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "libbluetooth_audio_session_aidl",
+        "server_configurable_flags",
+        "vendor.qti.hardware.bluetooth_audio@2.0",
+        "vendor.qti.hardware.bluetooth_audio@2.1",
+        "android.hardware.audio.common@5.0",
+    ],
+    static_libs: [
+        "btaudiohal_flags_c_lib",
+    ],
+}
