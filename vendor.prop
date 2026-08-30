@@ -1,4 +1,3 @@
-# Signed-off-by: Bubun Das <bubundas17@gmail.com>
 # Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
@@ -100,8 +99,10 @@ vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.chall
 ro.soc.manufacturer=QTI
 
 # DPM
-persist.vendor.dpm.vndr.feature=0
-persist.vendor.dpm.vndr.halservice.enable=0
+persist.vendor.dpm.vndr.feature=11
+persist.vendor.dpm.vndr.halservice.enable=1
+persist.vendor.dpm.vndr.idletimer.mode=default
+#persist.vendor.dpm.vndr.tcm=2
 
 # Display
 vendor.display.comp_mask=0
@@ -209,11 +210,7 @@ vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=1
 
 # WiFi
-wifi.interface=wlan0
 wifi.aware.interface=wifi-aware0
-wifi.direct.interface=p2p-dev-wlan0
-ro.vendor.wifi.sap.interface=wlan0
-ro.vendor.wifi.sap.concurrent.iface=wlan1
 
 # Zygote
 zygote.critical_window.minute=10
