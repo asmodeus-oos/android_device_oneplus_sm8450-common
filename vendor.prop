@@ -209,7 +209,11 @@ vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=1
 
 # WiFi
+wifi.interface=wlan0
 wifi.aware.interface=wifi-aware0
+wifi.direct.interface=p2p-dev-wlan0
+ro.vendor.wifi.sap.interface=wlan0
+ro.vendor.wifi.sap.concurrent.iface=wlan1
 
 # Zygote
 zygote.critical_window.minute=10
