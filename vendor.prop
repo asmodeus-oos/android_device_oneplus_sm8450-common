@@ -100,10 +100,8 @@ vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.chall
 ro.soc.manufacturer=QTI
 
 # DPM
-persist.vendor.dpm.vndr.feature=11
-persist.vendor.dpm.vndr.halservice.enable=1
-persist.vendor.dpm.vndr.idletimer.mode=default
-#persist.vendor.dpm.vndr.tcm=2
+persist.vendor.dpm.vndr.feature=0
+persist.vendor.dpm.vndr.halservice.enable=0
 
 # Display
 vendor.display.comp_mask=0
