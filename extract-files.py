@@ -65,8 +65,13 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbase_shim.so'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libinput_shim.so'),
+    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
+        .add_needed('libgui_shim.so'),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
+    ('system_ext/bin/horae', 'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so'): blob_fixup()
+        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so')
+        .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-21.7.so'),
     'vendor/lib64/libsnapdragoncolor-manager.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     ('vendor/bin/poweropt-service', 'vendor/lib64/libdpps.so', 'vendor/lib64/libpowercore.so', 'vendor/lib64/libpsmoptfeature.so', 'vendor/lib64/libstandbyfeature.so', 'vendor/lib64/libvideooptfeature.so'): blob_fixup()
