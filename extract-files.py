@@ -122,6 +122,15 @@ blob_fixups: blob_fixups_user_type = {
     # The display XML parsers use the Android 14 tinyxml2 XMLDocument layout.
     ('vendor/lib64/libdpps.so', 'vendor/lib64/libsnapdragoncolor-manager.so'): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'vendor/lib64/hw/vulkan.adreno.so': blob_fixup()
+        .binary_regex_replace( # BV CP_WAIT_TIMESTAMP onchip 1 -> CP_NOP
+              b'\x03\x80\x94\x70\x12\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00',
+              b'\x03\x80\x10\x70\x12\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00',
+        )
+        .binary_regex_replace( # BV CP_WAIT_TIMESTAMP onchip 3 -> CP_NOP
+              b'\x03\x80\x94\x70\x12\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00',
+              b'\x03\x80\x10\x70\x12\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00',
+        ),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
         .add_needed('libhidlbase_shim.so'),
 }  # fmt: skip
