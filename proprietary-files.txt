@@ -212,7 +212,7 @@ vendor/etc/display/video_alignments.json|1da7a17e680a77d447d906cda9c3701017b1a3f
 vendor/etc/init/vendor.qti.hardware.display.color-service.rc|3184edb3f185e2a9e42bf610200ebac1f4e87d8f
 vendor/lib64/libdigital-dimming.so|b71804db676b9a35d07dd119caa2efb3715ae825
 vendor/lib64/libdisp-aba.so|43d989e8bc62d78180fcf37ee64b3d78fa11eb84
-vendor/lib64/libdisplayqos.so|efd8df7eb08e496a474e9cc10e7fe68a3176880d
+vendor/lib64/libdisplayqos.so|efd8df7eb08e496a474e9cc10e7fe68a3176880d|cc1ad235f3f900c4a07d51f8f1e360ad668cec5e
 vendor/lib64/libdisplayskuutils.so|c1fa7912f6b45ad24a7cd15a65d96b2f2c9bbe27
 vendor/lib64/libdpps.so|8caa481b56345361c5164e607f59bb2e961b667b
 vendor/lib64/libhdr_tm.so|f646ac9a8902bde6607bdeb486d6eb4c681f8793
