@@ -156,7 +156,6 @@ odm/etc/init/vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service.rc
 odm/etc/vintf/manifest/manifest_oplus_ifaa.xml
 odm/lib64/libifaa_factory.so
 odm/lib64/librpmbengclient.so
-odm/lib64/libsecurity_event_dcs_vnd.so
 odm/lib64/vendor.oplus.hardware.biometrics.fingerprintpay-V1-ndk_platform.so
 
 # Fingerprint Pay firmware
@@ -503,7 +502,6 @@ system/etc/permissions/uimremoteclient.xml
 system/etc/permissions/uimremoteserver.xml
 
 # Secure element
-odm/lib64/libsecurity_event_olc_vnd.so
 vendor/lib64/libGPTEE_vendor.so
 
 # vi:ft=conf
