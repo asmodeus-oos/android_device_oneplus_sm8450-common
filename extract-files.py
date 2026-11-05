@@ -67,7 +67,8 @@ blob_fixups: blob_fixups_user_type = {
     'system/framework/WfdCommon.jar': blob_fixup()
         .apktool_patch('blob-patches/WfdCommon.patch'),
     'system_ext/bin/horae': blob_fixup()
-        .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-21.7.so'),
+        .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-21.12.so')
+        .replace_needed('libprotobuf-cpp-lite-21.7.so', 'libprotobuf-cpp-lite-21.12.so'),
     (
         'system_ext/etc/seccomp_policy/tcmd.policy',
         'vendor/etc/seccomp_policy/syshealthmon.policy'
@@ -120,7 +121,8 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libinput_shim.so'),
     'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so': blob_fixup()
-        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so'),
+        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.12.so')
+        .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
     'vendor/bin/qguard': blob_fixup()
         .add_needed('libbase_shim.so'),
     ('vendor/etc/media_codecs_cape_vendor.xml', 'vendor/etc/media_codecs_taro_vendor.xml'): blob_fixup()
