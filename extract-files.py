@@ -79,7 +79,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/hw/vendor.qti.media.c2@1.0-service',
         'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service',
     ): blob_fixup()
-        .binary_regex_replace(b'\x00\x21\x80\x52', b'\x00\x24\x80\x52'),
+        .binary_regex_replace(b'\x00\x21\x80\x52', b'\x00\x22\x80\x52'),
     'vendor/bin/system_dlkm_modprobe.sh': blob_fixup()
         .regex_replace(r'.*\bzram or zsmalloc\b.*\n', '')
         .regex_replace(r'-e "zram" -e "zsmalloc"', ''),
