@@ -22,7 +22,7 @@ namespace_imports = [
     'hardware/qcom-caf/sm8450-6.6',
     'hardware/qcom-caf/wlan',
     'hardware/oplus',
-    'hardware/pixelworks/interfaces',
+    'vendor/oneplus/sm8450-common/interfaces/pixelworks',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
